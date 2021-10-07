@@ -1,5 +1,8 @@
 # Python Archetype
 
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![GitHub release](https://img.shields.io/github/v/release/fhooeaist/imaging.svg)](https://github.com/fhooeaist/imaging/releases)
+
 This project contains a simple templating mechanism for creating clean tox-compatible python projects.
 
 **Funfact**: This archetype project was created using the archetype. Archetype-inception :mind-blow:
