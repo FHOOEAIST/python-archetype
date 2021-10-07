@@ -1,14 +1,45 @@
-# <Project name >
+# Python Archetype
 
-<project description>
+This project contains a simple templating mechanism for creating clean tox-compatible python projects.
 
-## Getting Started
+**Funfact**: This archetype project was created using the archetype. Archetype-inception :mind-blow:
 
-<Write how to get started. e.g. which dependencies are required, how you can build the project. and how you can start.>
+## Requirements
 
-## FAQ
+The archetype project requires [Python](https://www.python.org/downloads/release/python-390/), [PIP](https://pip.pypa.io/en/stable/installing/) and [Tox](https://pypi.org/project/tox/).
 
-If you have any questions, please checkout our <insert FAQ link here if using maven site, otherwise write a small FAQ section here>.
+### Compatibility
+
+Currently, the archetype is tested for Python 3.7, 3.8 and 3.9. It could work out with other Python versions too, but this was not tested and happens on your own risk.
+
+
+## Getting started
+
+Clone the project using git, open a CLI in the cloned folder `python-archetype/src/archetype` and call:
+
+```
+python archetype.py
+```
+
+Afterwards you are prompted to input:
+* a project name
+* the target python version (e.g. 3.7, 3.8, 3.9, ...)
+* the base folder for the created project (basefolder + project name = source of generated project)
+
+Voila, you have created a clean python project.
+
+To adapt or test the project have a look at the detailed description [here](./documentation/Tox.md)
+
+## How to continue?
+
+After the creation of the project follow the steps:
+
+- Update pip if necessary.
+- Install tox if necessary
+- Fill in your requirements into: `requirements-to-freeze.txt`
+- Call: `pip freeze -r requirements-to-freeze.txt > requirements.txt`
+- Call: `tox`
+- Ready to go
 
 ## Contributing
 
