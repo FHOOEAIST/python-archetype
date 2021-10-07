@@ -71,7 +71,8 @@ class Archetype(object):
         self,
         projectname: str,
         pythonversion: str,
-        targetfolder: str
+        targetfolder: str,
+        templatefolder: str = os.path.join(os.getcwd(), "template")
     ) -> str:
         """
         Creates the project based on the given project name
@@ -79,6 +80,7 @@ class Archetype(object):
         :param projectname: name of the project
         :param pythonversion: Python version used for the generated project
         :param targetfolder: Target folder where the generated project should be saved
+        :param templatefolder: source folder of the project template
         :return: returns the path where the project was created
         """
         if projectname.isalnum():
@@ -87,7 +89,7 @@ class Archetype(object):
 
             # create target base folder and move all basic elements like Readme.md
             os.makedirs(projectfolder, 0o775)
-            self.copy_all_files(os.path.join(os.getcwd(), "template"), projectfolder, projectname, pythonversion)
+            self.copy_all_files(templatefolder, projectfolder, projectname, pythonversion)
             return projectfolder
 
         else:

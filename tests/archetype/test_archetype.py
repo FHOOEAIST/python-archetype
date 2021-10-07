@@ -14,7 +14,7 @@ class TestArchetype(unittest.TestCase):
         :return:
         """
         current_directory = os.getcwd()
-        test_folder = current_directory + os.path.sep + "test"
+        test_folder = os.path.join(current_directory, "template")
         pycache_folder = current_directory + os.path.sep + "__pycache__"
         if os.path.exists(test_folder) and os.path.isdir(test_folder):
             shutil.rmtree(test_folder)
@@ -31,13 +31,13 @@ class TestArchetype(unittest.TestCase):
         # given
         self.cleanup()
         archetype = Archetype()
-        path = os.path.join(os.getcwd().replace("tests", "src"), "template")
+        path = os.path.join(os.getcwd().replace("tests", "src"), os.getcwd(), "template")
 
         # when
-        result = archetype.create("test", path)
+        result = archetype.create("test", "3.7", path, os.path.join(os.getcwd().replace("tests", "src"), "template"))
 
         # then
-        self.assertEqual(result, os.path.join(os.getcwd(), "test"))
+        self.assertEqual(result, os.path.join(path, "test"))
 
         if os.path.exists(result) and os.path.isdir(result):
             shutil.rmtree(result)
