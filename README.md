@@ -1,7 +1,7 @@
 # Python Archetype
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
-[![GitHub release](https://img.shields.io/github/v/release/fhooeaist/imaging.svg)](https://github.com/fhooeaist/imaging/releases)
+[![GitHub release](https://img.shields.io/github/v/release/fhooeaist/python-archetype.svg)](https://github.com/fhooeaist/python-archetype/releases)
 
 This project contains a simple templating mechanism for creating clean tox-compatible python projects.
 
@@ -56,10 +56,3 @@ DO NOT ALTER OR REMOVE COPYRIGHT NOTICES.
 This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at https://mozilla.org/MPL/2.0/.
-
-## Research
-
-If you are going to use this project as part of a research paper, we would ask you to reference this project by citing
-it. 
-
-<TODO zenodo doi>
