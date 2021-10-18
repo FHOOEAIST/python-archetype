@@ -35,6 +35,7 @@ In the CLI mode use the `archetype.py` script to create your target project usin
 - `-p`: The name of your project.
 - `-v`: The target Python version.
 - `-t`: The target base folder.
+- `-D`: If there is an overlapping project with same name in the targetfolder, delete it.
 
 Like:
 ```python

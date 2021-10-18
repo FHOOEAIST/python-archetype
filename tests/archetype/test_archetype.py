@@ -7,7 +7,7 @@ from archetype.archetype import Archetype
 
 class TestArchetype(unittest.TestCase):
     @staticmethod
-    def cleanup():
+    def cleanup() -> None:
         """
         Clean up the directory
 
@@ -22,7 +22,7 @@ class TestArchetype(unittest.TestCase):
         if os.path.exists(pycache_folder) and os.path.isdir(pycache_folder):
             shutil.rmtree(pycache_folder)
 
-    def test_archetype(self):
+    def test_archetype(self) -> None:
         """
         Tests Archetype.create()
 
@@ -31,10 +31,17 @@ class TestArchetype(unittest.TestCase):
         # given
         self.cleanup()
         archetype = Archetype()
-        path = os.path.join(os.getcwd().replace("tests", "src"), os.getcwd(), "template")
+        path = os.path.join(
+            os.getcwd().replace("tests", "src"), os.getcwd(), "template"
+        )
 
         # when
-        result = archetype.create("test", "3.7", path, os.path.join(os.getcwd().replace("tests", "src"), "template"))
+        result = archetype.create(
+            "test",
+            "3.7",
+            path,
+            os.path.join(os.getcwd().replace("tests", "src"), "template"),
+        )
 
         # then
         self.assertEqual(result, os.path.join(path, "test"))
