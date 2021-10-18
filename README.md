@@ -18,20 +18,41 @@ Currently, the archetype is tested for Python 3.7, 3.8 and 3.9. It could work ou
 
 ## Getting started
 
-Clone the project using git, open a CLI in the cloned folder `python-archetype/src/archetype` and call:
+Clone the project using git, open a CLI in the cloned folder `python-archetype/src/archetype`.
+
+The following information is required, regardless of wheter the CLI mode or the UI mode is used:
+* a project name
+* the target python version (e.g. 3.7, 3.8, 3.9, ...)
+* the base folder for the created project (basefolder + project name = source of generated project)
+
+After adding the information, you have created a clean python project.
+
+To adapt or test the project have a look at the detailed description [here](./documentation/Tox.md)
+
+### CLI Mode
+
+In the CLI mode use the `archetype.py` script to create your target project using the following console arguments:
+- `-p`: The name of your project.
+- `-v`: The target Python version.
+- `-t`: The target base folder.
+
+Like:
+```python
+python archetype.py -p myNewProject -v 3.7 -t C:/public/
+```
+
+This will create a Tox compatible Python project at: `C:/public/myNewProject`
+
+### UI Mode
+
+In the UI mode just call the `archetype.py` file like:
 
 ```
 python archetype.py
 ```
 
-Afterwards you are prompted to input:
-* a project name
-* the target python version (e.g. 3.7, 3.8, 3.9, ...)
-* the base folder for the created project (basefolder + project name = source of generated project)
+Afterwards you are prompted to input the required information.:
 
-Voila, you have created a clean python project.
-
-To adapt or test the project have a look at the detailed description [here](./documentation/Tox.md)
 
 ## How to continue?
 
