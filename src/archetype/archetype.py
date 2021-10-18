@@ -72,7 +72,7 @@ class Archetype:
             elif os.path.isdir(full_file_name):
                 if file_name == "__pycache__":
                     return
-                elif file_name == self.placeholders["projectnameplaceholder"]["value"]:
+                elif file_name == "projectnameplaceholder":
                     name = self.placeholders["projectnameplaceholder"]["value"]
                 else:
                     name = file_name
@@ -105,6 +105,7 @@ class Archetype:
             # get directory paths
             projectfolder = os.path.join(targetfolder, projectname)
 
+            print(delete_if_exist)
             if delete_if_exist and os.path.exists(projectfolder):
                 print("Deleting old project.")
                 shutil.rmtree(projectfolder)
@@ -135,7 +136,7 @@ if __name__ == "__main__":
         "-t", dest="targetfolder", help="Targeted Base folder for the created project."
     )
     parser.add_argument(
-        "-D", dest="deleteifexist", action='store_false', help="If there is a project with the same name in the target folder, delete it."
+        "-D", dest="deleteifexist", action='store_true', help="If there is a project with the same name in the target folder, delete it."
     )
 
     args = parser.parse_args()
