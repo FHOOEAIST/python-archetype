@@ -20,7 +20,7 @@ Currently, the archetype is tested for Python 3.7, 3.8 and 3.9. It could work ou
 
 Clone the project using git, open a CLI in the cloned folder `python-archetype/src/archetype`.
 
-The following information is required, regardless of wheter the CLI mode or the UI mode is used:
+The following information is required, regardless of whether the CLI mode or the UI mode is used:
 * a project name
 * the target python version (e.g. 3.7, 3.8, 3.9, ...)
 * the base folder for the created project (basefolder + project name = source of generated project)
@@ -35,10 +35,10 @@ In the CLI mode use the `archetype.py` script to create your target project usin
 - `-p`: The name of your project.
 - `-v`: The target Python version.
 - `-t`: The target base folder.
-- `-D`: If there is an overlapping project with same name in the targetfolder, delete it.
+- `-D`: If there is an overlapping project with the same name in the targetfolder, delete it.
 
 Like:
-```python
+```shell
 python archetype.py -p myNewProject -v 3.7 -t C:/public/ -D
 ```
 
@@ -56,7 +56,7 @@ Afterwards you are prompted to input the required information.
 
 
 ## How to continue?
-
+How to continue?
 After the creation of the project follow the steps:
 
 - Update pip if necessary.
