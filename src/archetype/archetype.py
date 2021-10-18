@@ -105,7 +105,6 @@ class Archetype:
             # get directory paths
             projectfolder = os.path.join(targetfolder, projectname)
 
-            print(delete_if_exist)
             if delete_if_exist and os.path.exists(projectfolder):
                 print("Deleting old project.")
                 shutil.rmtree(projectfolder)
