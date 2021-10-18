@@ -39,7 +39,7 @@ In the CLI mode use the `archetype.py` script to create your target project usin
 
 Like:
 ```python
-python archetype.py -p myNewProject -v 3.7 -t C:/public/
+python archetype.py -p myNewProject -v 3.7 -t C:/public/ -D
 ```
 
 This will create a Tox compatible Python project at: `C:/public/myNewProject`
@@ -52,7 +52,7 @@ In the UI mode just call the `archetype.py` file like:
 python archetype.py
 ```
 
-Afterwards you are prompted to input the required information.:
+Afterwards you are prompted to input the required information.
 
 
 ## How to continue?
