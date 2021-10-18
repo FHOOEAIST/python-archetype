@@ -1,7 +1,7 @@
 import os
 import os.path
 import shutil
-
+import argparse
 
 class Archetype(object):
     """
@@ -98,22 +98,37 @@ class Archetype(object):
 
 
 if __name__ == "__main__":
-    projectname = input(
-        "What is the project`s name? Special symbols are not allowed in the "
-        "name only alphanumeric characters!   "
-    ).strip()
+    parser = argparse.ArgumentParser(description='Creating a tox compatible project')
+    parser.add_argument('-p', dest='projectname', help='The target name of the project. Special symbols are not allowed.')
+    parser.add_argument('-v', dest='pythonversion', help='Targeted Python version (e.g. 3.7 or 3.9).')
+    parser.add_argument('-t',dest='targetfolder', help='Targeted Base folder for the created project.')
+
+    args = parser.parse_args()
+    if args.projectname:
+        projectname = args.projectname
+    else:
+        projectname = input(
+            "What is the project`s name? Special symbols are not allowed in the "
+            "name only alphanumeric characters!   "
+        ).strip()
 
     if len(projectname) == 0:
         print("Project name must not be empty")
         exit(-1)
 
-    pythonversion = input("Which python version should be used (e.g. 3.9)?  ").strip()
+    if args.pythonversion:
+        pythonversion = args.pythonversion
+    else:
+        pythonversion = input("Which python version should be used (e.g. 3.9)?  ").strip()
 
     if len(pythonversion) == 0:
         print("Python version must not be empty")
         exit(-1)
 
-    targetfolder = input("What is the target base folder for the created project?   ").strip()
+    if args.targetfolder:
+        targetfolder = args.targetfolder
+    else:
+        targetfolder = input("What is the target base folder for the created project?   ").strip()
 
     if len(targetfolder) == 0:
         print("Target folder must not be empty")
